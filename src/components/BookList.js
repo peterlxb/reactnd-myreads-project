@@ -56,22 +56,45 @@ const books = [
 class BookList extends React.Component {
 
   render() {
+
+		let currentlyReading
+		let wantToRead
+		let read
+
+		currentlyReading = books.filter((book) => (
+			book.bookShelfTitle == 'Currently Reading'
+		))
+
+		wantToRead = books.filter((book) => (
+			book.bookShelfTitle == 'Want to Read'
+		))
+
+		read = books.filter((book) => (
+			book.bookShelfTitle == 'Read'
+		))
+
     return (
-
+				<div>
         <div className="bookshelf">
-
-
-					<div>
-          <h2 className="bookshelf-title">Read</h2>
-          <div className="bookshelf-books">
-            <Books books={books}/>
-          </div>
+					<h2 className="bookshelf-title">Currently Reading</h2>
+					<div className="bookshelf-books">
+						<Books books={currentlyReading}/>
+					</div>
 					</div>
 
-
-
-
-        </div>
+					<div className="bookshelf">
+						<h2 className="bookshelf-title">Want to Read</h2>
+						<div className="bookshelf-books">
+							<Books books={wantToRead}/>
+						</div>
+						</div>
+						<div className="bookshelf">
+							<h2 className="bookshelf-title">Read</h2>
+							<div className="bookshelf-books">
+								<Books books={read}/>
+							</div>
+							</div>
+							</div>
     )
   }
 }
