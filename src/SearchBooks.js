@@ -45,30 +45,29 @@ class SearchBooks extends React.Component {
               placeholder="Search by title or author"
               onChange={(event) => this.updateQuery(event.target.value)}
             />
-            {JSON.stringify(this.state)}
+            
           </div>
         </div>
         <div className="search-books-results">
           <ol className="books-grid">
             <div className="bookshelf-books">
-            {console.log(this.state.books)}
               <ol className="books-grid">
                 {this.state.books.sort(sortBy('title'))
                 .map(book => (
                   <Books
-                  onmoveBook={this.props.moveBook}
-                  key={book.id}
-                  book={book}
-                  booksonShelf={this.props.booksonShelf}
+                    onmoveBook={this.props.onmoveBook}
+                    book={book}
+                    key={book.id}
+                    booksonShelf={this.props.booksonShelf}
                   />
-            ))
-            }
-          </ol>
-          </div>
+                ))
+              }
+
+              </ol>
+            </div>
           </ol>
         </div>
       </div>
-
     )
   }
 }

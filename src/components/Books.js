@@ -11,11 +11,11 @@ class Books extends React.Component {
 render(){
 
     const {book, booksonShelf} =  this.props
-
+    console.log(book);
     if(booksonShelf){
       booksonShelf.filter((b) => b.id === book.id).map(b => book.shelf === b.shelf)
     }
-    
+
     return(
 
           <div className="book">
@@ -36,10 +36,7 @@ render(){
           <div className="book-title">{book.title}</div>
           <div className="book-authors">{book.authors}</div>
         </div>
-
-
-
-    )
+      )
   }
 
 }
