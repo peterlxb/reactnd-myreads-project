@@ -17,7 +17,7 @@ class BookList extends React.Component {
             return(
               <div key={index}>
               <div className="bookshelf">
-    					    <h2 className="bookshelf-title">{shelvesName.index}</h2>
+    					    <h2 className="bookshelf-title">{shelvesName[index]}</h2>
     					    <div className="bookshelf-books">
                     <ol className="books-grid">
                       {this.props.booksonShelf.sort(sortBy('title'))
