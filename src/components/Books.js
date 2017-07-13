@@ -15,6 +15,7 @@ render(){
     if(booksonShelf){
       booksonShelf.filter((b) => b.id === book.id).map(b => book.shelf === b.shelf)
     }
+    
     return(
 
           <div className="book">
