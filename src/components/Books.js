@@ -21,7 +21,7 @@ render(){
           <div className="book">
             <div className="book-top">
               <div className="book-cover" style={ { width: 128, height: 193}}  >
-                <img src={book.imageLinks} alt={book.title}/>
+                <img src={book.imageLinks.thumbnail} alt={book.title}/>
               </div>
               <div className="book-shelf-changer">
                 <select value={book.shelf} onChange={(e) => this.updateBook(e.target.value)}>
