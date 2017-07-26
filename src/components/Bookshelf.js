@@ -1,5 +1,5 @@
 import React from 'react'
-import Books from './Books'
+import Book from './Books'
 import sortBy from 'sort-by'
 
 
@@ -19,18 +19,18 @@ class BookList extends React.Component {
               <div className="bookshelf">
     					    <h2 className="bookshelf-title">{shelvesName[index]}</h2>
     					    <div className="bookshelf-books">
-                    <ol className="books-grid">
-                      {this.props.booksonShelf.sort(sortBy('title'))
-                      .filter(book => book.shelf === shelf )
-                      .map(book => (
-                        <Books
-                          onmoveBook={this.props.onmoveBook}
-                          key={book.id}
-                          book={book}
-                        />
-                      ))
-                    }
-                    </ol>
+                  <ol className="books-grid">
+                    {this.props.booksOnShelf.sort(sortBy('title'))
+                    .filter(book => book.shelf === shelf )
+                    .map(book => (
+                      <Book
+                        onmoveBook={this.props.onmoveBook}
+                        key={book.id}
+                        book={book}
+                      />
+                    ))
+                  }
+                  </ol>
     					    </div>
     				   </div>
               </div>

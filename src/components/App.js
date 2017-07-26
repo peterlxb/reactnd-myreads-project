@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from '../BooksAPI'
 import SearchBooks from './SearchBooks'
 import { Link } from 'react-router-dom'
-import Bookshelf from './components/Bookshelf'
-import './App.css'
+import Bookshelf from './Bookshelf'
+import '../App.css'
 
 class BooksApp extends React.Component {
   state = {
@@ -27,7 +27,9 @@ class BooksApp extends React.Component {
   componentDidMount(){
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
+      
     })
+
   };
 
 
@@ -40,12 +42,12 @@ class BooksApp extends React.Component {
             <div>
               <Bookshelf
               onmoveBook={this.moveBook}
-              booksonShelf={this.state.books}
+              booksOnShelf={this.state.books}
               />
             </div>
             <div className="open-search">
               <Link to="/search">
-                <a>Add a book</a>
+                Add a book
               </Link>
             </div>
           </div>
@@ -53,7 +55,7 @@ class BooksApp extends React.Component {
         <Route  path="/search" render={() => (
           <SearchBooks
             onmoveBook={this.moveBook}
-            booksonShelf={this.state.books}
+            booksOnShelf={this.state.books}
           />
         )} />
       </div>

@@ -27,4 +27,5 @@ To simplify your development process, we've provided a backend server for you to
 * when chose the option update it
 
 ## how to run
-* just run npm start
+* first clone it by using `git clone https://github.com/peterlxb/reactnd-myreads-project`
+* then go to the directory and run` npm start`

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from '../BooksAPI'
 import sortBy from 'sort-by'
-import Books from './components/Books'
-import './App.css'
+import Book from './Books'
+import '../App.css'
 
 class SearchBooks extends React.Component {
 
@@ -17,9 +17,9 @@ class SearchBooks extends React.Component {
     if(!query){
       this.setState({query:'',books:[]});
     } else {
-      this.setState({query:query.trim()})
+      this.setState({query: query.trim()})
       BooksAPI.search(query).then((books) => {
-        if(books.error){
+        if(books.error) {
           books = [];
         }
         this.setState({books})
@@ -45,7 +45,6 @@ class SearchBooks extends React.Component {
               placeholder="Search by title or author"
               onChange={(event) => this.updateQuery(event.target.value)}
             />
-            
           </div>
         </div>
         <div className="search-books-results">
@@ -54,11 +53,11 @@ class SearchBooks extends React.Component {
               <ol className="books-grid">
                 {this.state.books.sort(sortBy('title'))
                 .map(book => (
-                  <Books
+                  <Book
                     onmoveBook={this.props.onmoveBook}
-                    book={book}
                     key={book.id}
-                    booksonShelf={this.props.booksonShelf}
+                    book={book}
+                    booksOnShelf={this.props.booksOnShelf}
                   />
                 ))
               }
