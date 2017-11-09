@@ -4,10 +4,7 @@ import sortBy from 'sort-by'
 
 
 class BookList extends React.Component {
-
-
   render() {
-
     let shelves = ["currentlyReading","wantToRead","read"];
     let shelvesName = ["Currently Reading", "Want to Read", "Read"];
 

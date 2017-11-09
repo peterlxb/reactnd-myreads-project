@@ -13,7 +13,6 @@ class SearchBooks extends React.Component {
   }
 
   updateQuery = (query) => {
-
     if(!query){
       this.setState({query:'',books:[]});
     } else {
@@ -25,19 +24,12 @@ class SearchBooks extends React.Component {
         this.setState({books})
       })
     }
-
   }
 
-
-
-  render() {
-
-    return (
-
-      <div className="search-books">
-
-        <div className="search-books-bar">
-
+render() {
+  return (
+    <div className="search-books">
+      <div className="search-books-bar">
           <Link to="/" className="close-search">Close</Link>
           <div className="search-books-input-wrapper">
             <input
@@ -61,8 +53,7 @@ class SearchBooks extends React.Component {
                   />
                 ))
               }
-
-              </ol>
+               </ol>
             </div>
           </ol>
         </div>
